@@ -5,11 +5,11 @@
 
 # Chargement des packages de travail
 
-require(purrr)
-require(dplyr)
-require(readxl)
-require(openxlsx)
-require(here)
+if(!require(purrr)) install.packages("purrr")
+if(!require(dplyr)) install.packages("dplyr")
+if(!require(readxl)) install.packages("readxl")
+if(!require(openxlsx)) install.packages("openxlsx")
+if(!require(here)) install.packages("here")
 
 #-------------------------------------------------------------------------------
 # Importation des feuilles excel renseignées par les structures
