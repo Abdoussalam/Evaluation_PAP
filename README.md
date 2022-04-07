@@ -4,15 +4,15 @@ Ce programme **R** a été développé par l'Unité Suivi et Évaluation de l'In
 
 Pour l'exécuter : 
 
-1. télécharger et installer [**R**](https://cran.r-project.org/) puis **Rstudio**](https://www.rstudio.com/products/rstudio/download/) sur votre ordinateur ;
+1. télécharger et installer [**R**](https://cran.r-project.org/) puis [**Rstudio**](https://www.rstudio.com/products/rstudio/download/) sur votre ordinateur ;
 
-2. Télécharger le dossier contenant le code R et l'ensemble des données [Ici] (https://github.com/Abdoussalam/Evaluation_PAP/archive/refs/heads/main.zip) ;
+2. télécharger le dossier contenant le code R et l'ensemble des données [**Ici**](https://github.com/Abdoussalam/Evaluation_PAP/archive/refs/heads/main.zip) ;
 
-3. dézipper le dossier téléchargé et cliquer sur le **Evaluation_PAP.Rproj** ;
+3. dézipper le dossier téléchargé et cliquer sur le fichier **Evaluation_PAP.Rproj**. Vous serez alors dans **Rstudio** ;
 
 4. exécuter le programme en cliquant sur n'importe où dans la fenêtre **script_traitement.R** puis en utilisant le raccourci **ctrl + shift + enter** ;
 
-NB: Avant de lancer le programme pour la première fois, assurez-vous être connecté à internet car des packages seront au besoin. 
+NB: Avant de lancer le programme pour la première fois, assurez-vous être connecté à internet car des packages seront automatiquement installés au besoin. 
 
 
 Après exécution du programme, vous pourrez retrouver les résultats de l'évaluation dans le dossier **resultat**. 
