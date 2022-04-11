@@ -17,6 +17,6 @@ Pour l'exécuter, veuillez suivre dans l'ordre les instructions ci-dessous :
 
 Après exécution du programme, vous pourrez retrouver les résultats de l'évaluation dans le dossier **resultat**. 
 
-*L'Unité Suivi et Evaluation est ouverte à toutes suggestions, commentaires ou remarques visant à améliorer le présent programme.* 
+*L'Unité Suivi et Évaluation est ouverte à toutes suggestions, commentaires ou remarques visant à améliorer le présent programme.* 
 
 
