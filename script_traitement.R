@@ -147,13 +147,13 @@ structure = sous_pap %>%
 taux_min <- service %>% 
   filter(`Taux de réalisation (%)` != 0) %>% 
   group_by(structure) %>% 
-  summarise(minimun = min(`Taux de réalisation (%)`))
+  summarise(minimum = min(`Taux de réalisation (%)`))
 
 ## Remplacement des taux nuls 
 service <- service %>% 
   left_join(taux_min) %>% 
   mutate(`Taux de réalisation corrigé (%)` = if_else(`Taux de réalisation (%)` == 0, 
-                                                     minimun, `Taux de réalisation (%)`))
+                                                     minimum, `Taux de réalisation (%)`))
 
 #-------------------------------------------------------------------------------
 
