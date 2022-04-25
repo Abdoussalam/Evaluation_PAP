@@ -137,8 +137,26 @@ structure = sous_pap %>%
             
          )
 
+#-------------------------------------------------------------------------------
+# Gestion des taux d'exécution nuls
+## Si un service à un taux d'exécution nul, celui-ci est remplacé par le taux minimum 
+## des taux des services de la même structure/Direction.
+
+## Taux minimum
+
+taux_min <- service %>% 
+  filter(`Taux de réalisation (%)` != 0) %>% 
+  group_by(structure) %>% 
+  summarise(minimun = min(`Taux de réalisation (%)`))
+
+## Remplacement des taux nuls 
+service <- service %>% 
+  left_join(taux_min) %>% 
+  mutate(`Taux de réalisation corrigé (%)` = if_else(`Taux de réalisation (%)` == 0, 
+                                                     minimun, `Taux de réalisation (%)`))
 
 #-------------------------------------------------------------------------------
+
 ## Exportation des résultats vers excel
 
 resultats <- list(Direction = structure,
