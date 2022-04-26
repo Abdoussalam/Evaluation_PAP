@@ -1,6 +1,7 @@
 #-------------------------------------------------------------------------------
 # Scripts pour l'évaluation des activités du PAP 2022 de l'INS du Niger
-# © Abdoussalam ZAKARI Avril 2022
+# Auteur : Abdoussalam ZAKARI, Responsable de l'Unité Suivi et Évaluation 
+#                             © Avril 2022
 #-------------------------------------------------------------------------------
 
 # Chargement/installation des packages de travail
