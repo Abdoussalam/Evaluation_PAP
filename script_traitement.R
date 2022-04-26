@@ -3,7 +3,7 @@
 # © Abdoussalam ZAKARI Avril 2022
 #-------------------------------------------------------------------------------
 
-# Chargement des packages de travail
+# Chargement/installation des packages de travail
 
 if(!require(purrr)) install.packages("purrr")
 if(!require(dplyr)) install.packages("dplyr")
@@ -96,7 +96,6 @@ division = sous_pap %>%
   group_by(structure, division) %>% 
   score()
 
-
 ## Taux d'exécution des dossiers prioritaires
 
 dossier_prio <- sous_pap %>% 
@@ -104,7 +103,6 @@ dossier_prio <- sous_pap %>%
   score() %>% 
   mutate(Dossier = "Ensemble") %>% 
   select(4, 1:3)
-
 
 ## Taux par structure
 
@@ -139,11 +137,10 @@ structure = sous_pap %>%
 
 #-------------------------------------------------------------------------------
 # Gestion des taux d'exécution nuls
-## Si un service à un taux d'exécution nul, celui-ci est remplacé par le taux minimum 
+## Si un service a un taux d'exécution nul, celui-ci est remplacé par le minimum 
 ## des taux des services de la même structure/Direction.
 
 ## Taux minimum
-
 taux_min <- service %>% 
   filter(`Taux de réalisation (%)` != 0) %>% 
   group_by(structure) %>% 
@@ -154,7 +151,6 @@ service <- service %>%
   left_join(taux_min) %>% 
   mutate(`Taux de réalisation corrigé (%)` = if_else(`Taux de réalisation (%)` == 0, 
                                                      minimum, `Taux de réalisation (%)`))
-
 #-------------------------------------------------------------------------------
 
 ## Exportation des résultats vers excel
