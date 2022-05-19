@@ -1,6 +1,6 @@
 # Evaluation du Projet Annuel de Performance de l'INS
 
-Ce programme **R** a été développé par l'Unité Suivi et Évaluation de l'Institut National de la Statistique du Niger (INS) pour automatiser l'évaluation des taux d'exécution des plans trimestriels de travail, utilisés dans le cadre de la mise en oeuvre du mécanisme d'incitation à la performance. Il vise également à rendre reproductibles les différents résultats de l'évaluation, en mettant à la disposition du personnel de l'INS, toutes les informations (codes du traitement et données) nécessaires à leur obtention.
+Ce programme **R** a été développé par l'Unité Suivi et Évaluation de l'Institut National de la Statistique du Niger (INS) pour l'évaluation des taux d'exécution des plans trimestriels de travail, utilisés dans le cadre de la mise en oeuvre du mécanisme d'incitation à la performance. Il vise également à rendre reproductibles les différents résultats de l'évaluation, en mettant à la disposition du personnel de l'INS, toutes les informations (codes du traitement et données) nécessaires à leur obtention.
 
 Pour l'exécuter, veuillez suivre dans l'ordre les instructions ci-dessous : 
 
@@ -17,6 +17,6 @@ Pour l'exécuter, veuillez suivre dans l'ordre les instructions ci-dessous :
 
 Après exécution du programme, vous pourrez retrouver les résultats de l'évaluation dans le dossier **resultat**. 
 
-*L'Unité Suivi et Évaluation est ouverte à toutes suggestions, commentaires ou remarques visant à améliorer le présent programme.* 
+*L'Unité Suivi et Évaluation est ouverte à toutes suggestions, commentaires ou remarques visant à améliorer le présent programme. Au besoin, n'hésitez pas à nous écrire aux adresses suivantes: salamyzs@yahoo.fr ou azakari@yahoo.fr.* 
 
 
