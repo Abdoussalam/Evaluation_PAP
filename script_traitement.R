@@ -19,7 +19,7 @@ if(!require(here)) install.packages("here")
 ## evaluation_trimestre_annee.xlsx
 
 annee <- 2022          # A adapter au besoin
-trimestre <- "t1"      # A adapter selon le trimestre : t1, t2, t3, t4
+trimestre <- "t2"      # A adapter selon le trimestre : t1, t2, t3, t4
 
 # Chemin d'accès au fichier des données
 
