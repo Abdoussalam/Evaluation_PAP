@@ -4,7 +4,7 @@ Ce programme **R** a été développé par l'Unité Suivi et Évaluation de l'In
 
 Pour l'exécuter, veuillez suivre dans l'ordre les instructions ci-dessous : 
 
-1. télécharger et installer [**R**](https://cran.r-project.org/bin/windows/base/R-4.2.0-win.exe) puis [**Rstudio**](https://download1.rstudio.org/desktop/windows/RStudio-2022.02.2-485.exe) sur votre ordinateur ;
+1. télécharger et installer [**R**](https://cran.r-project.org/bin/windows/base/R-4.2.1-win.exe) puis [**Rstudio**](https://download1.rstudio.org/desktop/windows/RStudio-2022.07.1-554.exe) sur votre ordinateur ;
 
 2. télécharger le dossier contenant le code R et l'ensemble des données [**Ici**](https://github.com/Abdoussalam/Evaluation_PAP/archive/refs/heads/main.zip) ;
 
