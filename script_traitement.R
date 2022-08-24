@@ -152,14 +152,25 @@ service <- service %>%
   left_join(taux_min) %>% 
   mutate(`Taux de réalisation corrigé (%)` = if_else(`Taux de réalisation (%)` == 0, 
                                                      minimum, `Taux de réalisation (%)`))
-#-------------------------------------------------------------------------------
 
+#-------------------------------------------------------------------------------
+# Score des agents mise à disposition et en position de stage
+## Il s'agit du score minimal de toutes les structures de l'INS
+
+autre_agent <- service %>% 
+  ungroup() %>% 
+  select(minimum) %>% 
+  summarise(Structure = "Appliquer aux agents \n mis à disposition \n en position de stage",
+            Score = min(minimum))
+
+#-------------------------------------------------------------------------------
 ## Exportation des résultats vers excel
 
 resultats <- list(Direction = structure,
                   Division = division,
                   Service = service,
-                  Dossiers_prioritaires = dossier_prio)
+                  Dossiers_prioritaires = dossier_prio,
+                  Autres_agents = autre_agent)
 
 # Fichiers des résultats pour le trimestre 
 
@@ -170,6 +181,6 @@ fichier_res <- paste("resultats",
 
 chemin_res <- here("resultats", fichier_res)
 
-write.xlsx(resultats, chemin_res, asTable = T)
+write.xlsx(resultats, chemin_res, asTable = T, colWidths = "auto")
 
   
