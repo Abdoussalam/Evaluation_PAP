@@ -8,11 +8,11 @@ Pour l'exécuter, veuillez suivre dans l'ordre les instructions ci-dessous :
 
 2. télécharger le dossier contenant le code R et l'ensemble des données [**Ici**](https://github.com/Abdoussalam/Evaluation_PAP/archive/refs/heads/main.zip) ;
 
-3. dézipper le dossier téléchargé et cliquer sur le fichier **Evaluation_PAP.Rproj**. Ceci lancera automatiquement **Rstudio** ;
+3. dézipper le dossier téléchargé et ouvrir le fichier **Evaluation_PAP.Rproj**. Ceci lancera automatiquement **Rstudio** ;
 
 4. exécuter le programme en cliquant n'importe où dans la fenêtre **script_traitement.R** puis en utilisant le raccourci clavier **ctrl + shift + enter** ;
 
-**NB: Avant de lancer le programme pour la première fois, assurez-vous d'être connecté à internet car des packages seront automatiquement installés au besoin.** 
+**NB: Avant de lancer le programme pour la première fois, assurez-vous d'être connecté à internet car des packages (modules R) seront automatiquement installés au besoin.** 
 
 
 Après exécution du programme, vous pourrez retrouver les résultats de l'évaluation dans le dossier **resultat**. 
