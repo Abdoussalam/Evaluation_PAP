@@ -31,12 +31,8 @@ nom_fichier <- paste("evaluation",
 
 chemin_data <- here("donnees", nom_fichier)
 
-## Noms des classeurs du fichier excel
-list_feuil <- list(chemin_data, 
-                sheet = excel_sheets(chemin_data))
-
 ## Importation de toutes les feuilles
-sous_pap <- pmap(list_feuil, read_excel) 
+sous_pap <- import_list(chemin_data) 
 
 #-------------------------------------------------------------------------------
 # Fonctions pour renommer les colonnes et sélectionner les plus importantes
