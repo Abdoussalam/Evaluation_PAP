@@ -11,6 +11,7 @@ if(!require(dplyr)) install.packages("dplyr")
 if(!require(readxl)) install.packages("readxl")
 if(!require(openxlsx)) install.packages("openxlsx")
 if(!require(here)) install.packages("here")
+if(!require(rio)) install.packages("rio")
 
 #-------------------------------------------------------------------------------
 # Importation des feuilles excel renseignées par les structures
