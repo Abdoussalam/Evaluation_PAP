@@ -1,5 +1,5 @@
 #-------------------------------------------------------------------------------
-# Scripts pour l'évaluation des activités du PAP 2022 de l'INS du Niger
+# Script pour l'évaluation des activités du PAP 2022 de l'INS du Niger
 # Auteur : Abdoussalam ZAKARI, Responsable de l'Unité Suivi et Évaluation 
 #                             © Avril 2022
 #-------------------------------------------------------------------------------
@@ -20,7 +20,7 @@ if(!require(rio)) install.packages("rio")
 ## evaluation_trimestre_annee.xlsx
 
 annee <- 2022          # A adapter au besoin
-trimestre <- "t3"      # A adapter selon le trimestre : t1, t2, t3, t4
+trimestre <- "t4"      # A adapter selon le trimestre : t1, t2, t3, t4
 
 # Chemin d'accès au fichier des données
 
