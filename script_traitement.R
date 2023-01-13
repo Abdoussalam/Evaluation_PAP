@@ -65,7 +65,10 @@ sous_pap <- sous_pap %>%
   map(nom_col) %>% 
   map(col_select) %>% 
   reduce(union_all) %>%
-  filter(prevision == 1)
+  filter(prevision == 1) %>% 
+  mutate(INS = if_else(structure %in% c("BCR", "CC", "DCMIS", "DCNCEE", "DER", 
+                                        "DRFM", "DRH","DSEDS", "USE", "PNIN", 
+                                        "ENSTAT", "DI"), 1, 0))
 
 #-------------------------------------------------------------------------------
 # Score par service, division et direction
@@ -82,7 +85,9 @@ score <- function(df = sous_pap){
 }
 
 ## Ensemble sous PAP
-ensemble = score()
+ensemble = score(sous_pap %>% 
+                   filter(INS == 1)) 
+  
 
 ## Taux par service
 service = sous_pap %>% 
@@ -92,7 +97,8 @@ service = sous_pap %>%
 ## taux par Division / Unité
 division = sous_pap %>% 
   group_by(structure, division) %>% 
-  score()
+  score() %>% 
+  na.omit()
 
 ## Taux d'exécution des dossiers prioritaires
 
@@ -120,7 +126,7 @@ structure = sous_pap %>%
            dossier_prio$`Taux de réalisation (%)` * 0.25 , 1)) %>% 
   
   #Ajout d'une ligne ensemble
-  add_row(structure = "Ensemble", 
+  add_row(structure = "Ensemble PAP INS \n (Hors Sectoriel)", 
           `Nombre de taches prévues` = ensemble$`Nombre de taches prévues`,
           `Nombre de taches réalisées` = ensemble$`Nombre de taches réalisées`,
           `Taux de réalisation (%)` = ensemble$`Taux de réalisation (%)`,
@@ -131,7 +137,8 @@ structure = sous_pap %>%
             round(`Taux de réalisation (%)` * 0.75 + 
                     dossier_prio$`Taux de réalisation (%)` * 0.25,1)
             
-         )
+         ) %>% 
+  na.omit()
 
 #-------------------------------------------------------------------------------
 # Gestion des taux d'exécution nuls
@@ -148,17 +155,18 @@ taux_min <- service %>%
 service <- service %>% 
   left_join(taux_min) %>% 
   mutate(`Taux de réalisation corrigé (%)` = if_else(`Taux de réalisation (%)` == 0, 
-                                                     minimum, `Taux de réalisation (%)`))
+                                                     minimum, `Taux de réalisation (%)`)) %>% 
+  na.omit()
 
 #-------------------------------------------------------------------------------
 # Score des agents mise à disposition et en position de stage
 ## Il s'agit du score minimal de toutes les structures de l'INS
 
-autre_agent <- service %>% 
-  ungroup() %>% 
-  select(minimum) %>% 
-  summarise(Structure = "Appliquer aux agents \n mis à disposition \n en position de stage",
-            Score = min(minimum))
+# autre_agent <- service %>% 
+#  ungroup() %>% 
+#  select(minimum) %>% 
+#  summarise(Structure = "Appliquer aux agents \n mis à disposition \n en position de stage",
+#            Score = min(minimum))
 
 #-------------------------------------------------------------------------------
 ## Exportation des résultats vers excel
@@ -166,8 +174,9 @@ autre_agent <- service %>%
 resultats <- list(Direction = structure,
                   Division = division,
                   Service = service,
-                  Dossiers_prioritaires = dossier_prio,
-                  Autres_agents = autre_agent)
+                  Dossiers_prioritaires = dossier_prio #,
+                  #Autres_agents = autre_agent
+                  )
 
 # Fichiers des résultats pour le trimestre 
 
